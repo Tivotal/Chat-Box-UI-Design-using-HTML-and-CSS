@@ -1,0 +1,176 @@
+/* Created by Tivotal */
+
+/* Google fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+#check {
+  display: none;
+}
+
+label {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  height: 55px;
+  width: 55px;
+  background: -webkit-linear-gradient(left, #c850c0, #4158d0);
+  text-align: center;
+  line-height: 55px;
+  border-radius: 50px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+label i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+label i.fas {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label i.fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+#check:checked ~ label i.fas {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.wrapper {
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+  opacity: 0;
+  pointer-events: none;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#check:checked ~ .wrapper {
+  bottom: 85px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wrapper .header {
+  line-height: 60px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(left, #c850c0, #4158d0);
+  color: #fff;
+  border-radius: 15px 15px 0 0;
+}
+
+.wrapper .chat-box {
+  padding: 20px;
+  width: 100%;
+}
+
+.wrapper .chat-box .desc {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #515365;
+}
+
+.wrapper .chat-box form {
+  padding: 10px 15px;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+}
+
+.wrapper .chat-box form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.wrapper .chat-box form .field:last-child {
+  margin-bottom: 15px;
+}
+
+.wrapper .chat-box form .field input,
+.wrapper .chat-box form .field textarea,
+.wrapper .chat-box form .field button {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 25px;
+  padding-left: 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .chat-box form .field input::placeholder,
+.wrapper .chat-box form .field textarea::placeholder {
+  color: silver;
+  transition: all 0.3s ease;
+}
+
+.wrapper .chat-box form .field input:focus::placeholder,
+.wrapper .chat-box form .field textarea:focus::placeholder {
+  color: lightgray;
+}
+
+.wrapper .chat-box form .field input:focus,
+.wrapper .chat-box form .field textarea:focus {
+  border-color: #fc83bb;
+}
+
+.wrapper .chat-box form .textarea {
+  height: 70px;
+  width: 100%;
+}
+
+.wrapper .chat-box form .textarea textarea {
+  height: 100%;
+  border-radius: 50px;
+  resize: none;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+.wrapper .chat-box form .field button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-left: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(left, #c850c0, #4158d0);
+  color: #fff;
+}
+
+.wrapper .chat-box form .field button:active {
+  transform: scale(0.97);
+}
